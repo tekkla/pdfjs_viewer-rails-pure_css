@@ -1,5 +1,5 @@
 <meta name="pdfjs_viewer_verbosity" content="<%= ENV.fetch("PDFJS_VIEWER_VERBOSITY", "errors") %>">
-<title><%= title %></title>
+<title><%= local_assigns[:title] %></title>
 
 <%= stylesheet_link_tag "pdfjs_viewer/viewer", media: "all" %>
 <% current_style = local_assigns[:style] || 'full' %>
@@ -18,7 +18,7 @@
 </script>
 <% if local_assigns[:pdf_url] %>
   <script type="text/javascript">
-    window.resourceURL = "<%= pdf_url %>";
+    window.resourceURL = "<%= local_assigns[:pdf_url] %>";
   </script>
 <% end %>
 
