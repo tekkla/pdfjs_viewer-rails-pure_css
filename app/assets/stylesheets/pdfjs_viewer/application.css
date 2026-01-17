@@ -1,3 +1,8 @@
+/* 
+This file is kept for backward compatibility and as a reference.
+In Rails 8.1 with Propshaft, it's recommended to link stylesheets individually
+to ensure correct asset digest resolution.
+*/
 @import "viewer.css";
 @import "minimal.css";
 @import "reduced.css";
