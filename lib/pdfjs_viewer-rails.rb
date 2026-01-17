@@ -7,7 +7,7 @@ module PdfjsViewer
       isolate_namespace PdfjsViewer
 
       initializer "pdfjs_viewer-rails.assets" do |app|
-        app.config.assets.paths << root.join("app/assets/pdfjs_viewer")
+        app.middleware.insert_before(ActionDispatch::Static, ActionDispatch::Static, root.join("public").to_s, index: 'index', headers: app.config.public_file_server.headers)
       end
 
       initializer "pdfjs_viewer-rails.view_helpers" do

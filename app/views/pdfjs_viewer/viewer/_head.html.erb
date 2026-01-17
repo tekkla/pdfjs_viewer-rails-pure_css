@@ -5,12 +5,12 @@
 <%= stylesheet_link_tag "pdfjs_viewer/#{local_assigns[:style] || 'full'}", media: "all" %>
 
 <!-- This snippet is used in production (included from viewer.html) -->
-<link rel="resource" type="application/l10n" href="<%= asset_path("locale.properties") %>"/>
+<link rel="resource" type="application/l10n" href="/pdfjs_viewer/locale.properties"/>
 
 <script type="text/javascript">
   window.PDFJS = {
     workerSrc: "<%= asset_path("pdfjs_viewer/pdf.worker.js") %>",
-    cMapUrl: "/assets/cmaps/",
+    cMapUrl: "/pdfjs_viewer/cmaps/",
     imageResourcesPath: "/assets/",
     cMapPacked: true
   };
