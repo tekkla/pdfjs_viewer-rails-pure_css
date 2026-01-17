@@ -1,42 +1,18 @@
-#pdfjs_viewer-minimal .toolbar, #outerContainer.minimal .toolbar {
-  display: none;
+#pdfjs_viewer-minimal div.toolbar,
+#pdfjs_viewer-minimal .toolbar,
+#outerContainer.minimal .toolbar {
+    display: none !important;
 }
-#pdfjs_viewer-minimal #scaleSelectContainer, #outerContainer.minimal #scaleSelectContainer {
-  display: none;
-}
-#pdfjs_viewer-minimal #secondaryToolbarToggle, #outerContainer.minimal #secondaryToolbarToggle {
-  display: none;
-}
-#pdfjs_viewer-minimal #toolbarViewerLeft, #outerContainer.minimal #toolbarViewerLeft {
-  display: none;
-}
-#pdfjs_viewer-minimal #toolbarViewerRight, #outerContainer.minimal #toolbarViewerRight {
-  display: none;
-}
-#pdfjs_viewer-minimal #viewFind, #outerContainer.minimal #viewFind {
-  display: none;
-}
-#pdfjs_viewer-minimal #viewAttachments, #outerContainer.minimal #viewAttachments {
-  display: none;
-}
-#pdfjs_viewer-minimal .openFile, #outerContainer.minimal .openFile {
-  display: none;
-}
-#pdfjs_viewer-minimal .download, #outerContainer.minimal .download {
-  display: none;
-}
-#pdfjs_viewer-minimal .bookmark, #outerContainer.minimal .bookmark {
-  display: none;
-}
-#pdfjs_viewer-minimal .secondaryToolbar, #outerContainer.minimal .secondaryToolbar {
-  display: none;
-}
-#pdfjs_viewer-minimal #viewerContainer, #pdfjs_viewer-minimal #mainContainer,
-#outerContainer.minimal #viewerContainer, #outerContainer.minimal #mainContainer {
-  background-color: white;
-  top: 0px;
-}
-#pdfjs_viewer-minimal #toolbarContainer, #outerContainer.minimal #toolbarContainer {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+
+#pdfjs_viewer-minimal #scaleSelectContainer,
+#pdfjs_viewer-minimal #secondaryToolbarToggle,
+#pdfjs_viewer-minimal #toolbarViewerLeft,
+#pdfjs_viewer-minimal #toolbarViewerRight,
+#pdfjs_viewer-minimal #viewFind,
+#pdfjs_viewer-minimal #viewAttachments,
+#pdfjs_viewer-minimal .openFile,
+#pdfjs_viewer-minimal .download,
+#pdfjs_viewer-minimal .bookmark,
+#pdfjs_viewer-minimal .secondaryToolbar {
+    display: none !important;
 }
