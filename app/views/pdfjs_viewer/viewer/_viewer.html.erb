@@ -1,5 +1,4 @@
-<% title = local_assigns[:title] || "PDF.js viewer" %>
-<% pdf_url = local_assigns[:pdf_url] %>
+<% local_assigns[:title] = "PDF.js viewer #{local_assigns[:style] || 'full'}" %>
 
 <!DOCTYPE html>
 <!--
