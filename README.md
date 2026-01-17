@@ -1,13 +1,16 @@
-# pdfjs_viewer-rails
+# pdfjs_viewer-rails-pure_css
 
 [![Build Status](https://travis-ci.org/senny/pdfjs_viewer-rails.svg?branch=master)](https://travis-ci.org/senny/pdfjs_viewer-rails)
+
+## Description
+My fork of pdfjs_viewer-rails that uses pure CSS instead scss. This makes it easier to integrate into existing projects.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'pdfjs_viewer-rails'
+gem 'pdfjs_viewer-rails', git: 'git://github.com/tekkla/pdfjs_viewer-rails-pure_css.git'
 ```
 
 *Note: pdfjs_viewer-rails is still in early development. Please report if you encounter any issues along the way.*
