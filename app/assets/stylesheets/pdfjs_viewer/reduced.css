@@ -1,24 +1,24 @@
-#pdfjs_viewer-reduced .openFile, #outerContainer.reduced .openFile {
+#pdfjs_viewer-reduced .openFile {
   display: none;
 }
-#pdfjs_viewer-reduced .bookmark, #outerContainer.reduced .bookmark {
+#pdfjs_viewer-reduced .bookmark {
   display: none;
 }
-#pdfjs_viewer-reduced #viewThumbnail, #outerContainer.reduced #viewThumbnail {
+#pdfjs_viewer-reduced #viewThumbnail {
   display: none;
 }
-#pdfjs_viewer-reduced #viewOutline, #outerContainer.reduced #viewOutline {
+#pdfjs_viewer-reduced #viewOutline {
   display: none;
 }
-#pdfjs_viewer-reduced #viewAttachments, #outerContainer.reduced #viewAttachments {
+#pdfjs_viewer-reduced #viewAttachments {
   display: none;
 }
-#pdfjs_viewer-reduced #download, #outerContainer.reduced #download {
+#pdfjs_viewer-reduced #download {
   display: none;
 }
-#pdfjs_viewer-reduced #secondaryToolbarToggle, #outerContainer.reduced #secondaryToolbarToggle {
+#pdfjs_viewer-reduced #secondaryToolbarToggle {
   display: none;
 }
-#pdfjs_viewer-reduced #toolbarViewerRight div.verticalToolbarSeparator, #outerContainer.reduced #toolbarViewerRight div.verticalToolbarSeparator {
+#pdfjs_viewer-reduced #toolbarViewerRight div.verticalToolbarSeparator {
   display: none;
 }

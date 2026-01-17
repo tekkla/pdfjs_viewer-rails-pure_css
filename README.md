@@ -2,8 +2,20 @@
 
 [![Build Status](https://travis-ci.org/senny/pdfjs_viewer-rails.svg?branch=master)](https://travis-ci.org/senny/pdfjs_viewer-rails)
 
-## Description
-My fork of pdfjs_viewer-rails that uses pure CSS instead scss and is compatible with Rails 8.1 (Propshaft & Importmaps) without Node.js requirements.
+## Summary of Changes (Pure CSS Fork)
+
+This fork updates the gem to work with **Rails 8.1+** and the **Propshaft** asset pipeline. Key changes include:
+
+*   **Pure CSS**: Removed `sassc-rails` dependency and converted SCSS to standard CSS.
+*   **No Node.js Required**: The gem no longer requires a JavaScript runtime (Node.js) for asset compilation.
+*   **Asset Pipeline**:
+    *   JS and CSS are handled by Propshaft.
+    *   Static resources (locales, cmaps) are served via `ActionDispatch::Static` from the engine's public folder to avoid issues with asset fingerprints in AJAX requests.
+*   **Fixes**: Corrected viewer style application (minimal/reduced) and localization file loading.
+
+## Motivation
+
+These changes were necessary when moving from Rails 7 to Rails 8 with **Propshaft** and **Importmaps**, as the original gem didn't work in this environment. The goal was to remove the SCSS/Node.js dependencies and ensure assets load correctly in modern Rails apps.
 
 ## Installation
 
@@ -13,9 +25,7 @@ Add this line to your application's Gemfile:
 gem "pdfjs_viewer-rails", github: "tekkla/pdfjs_viewer-rails-pure_css"
 ```
 
-This gem depends on `propshaft` and `importmap-rails`.
-
-*Note: pdfjs_viewer-rails is still in early development. Please report if you encounter any issues along the way.*
+This gem depends on `propshaft`.
 
 ## Viewer Styles
 
@@ -81,7 +91,7 @@ NOTE: The helper will render a full HTML document and should not be used in a la
 
 The verbosity of PDF.js can be set with:
 
-```
+```bash
 $ export PDFJS_VIEWER_VERBOSITY=warnings
 ```
 
@@ -109,7 +119,7 @@ NOTE: You can use the parameters you passed into `pdfjs_viewer` (if you're using
 
 ```erb
 <!-- Somewhere in a view in your project -->
-<%= pdfjs_viewer style: "reduced", something: "sick!" %>
+<%= pdfjs_viewer style: "reduced", something: "extra_data" %>
 ```
 
 and then access them:
@@ -117,41 +127,22 @@ and then access them:
 ```erb
 <!-- app/views/pdfjs_viewer/viewer/_extra_head.html.erb -->
 
-<%= tag.meta name: "something", content: something %>
+<%= tag.meta name: "something", content: local_assigns[:something] %>
 ```
 
 ### Setting up CORS
 
-If you plan to load PDFs from that are hosted on another domain from the
+If you plan to load PDFs that are hosted on another domain from the
 PDF.js viewer, you may need to set up a Cross-Origin Resource Sharing (CORS)
 Policy to allow PDF.js to read PDFs from your domain. If you're serving PDFs
 straight from Amazon S3 (e.g. `bucket.s3-us-west-1.amazonaws.com`), you will
-need to add a CORS policy to the S3 bucket. This CORS configuration has been
-tested on S3:
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01">
-    <CORSRule>
-        <AllowedOrigin>*</AllowedOrigin>
-        <AllowedMethod>GET</AllowedMethod>
-        <AllowedMethod>HEAD</AllowedMethod>
-        <MaxAgeSeconds>3000</MaxAgeSeconds>
-        <AllowedHeader>Range</AllowedHeader>
-        <AllowedHeader>Authorization</AllowedHeader>
-        <ExposeHeader>Accept-Ranges</ExposeHeader>
-        <ExposeHeader>Content-Encoding</ExposeHeader>
-        <ExposeHeader>Content-Length</ExposeHeader>
-        <ExposeHeader>Content-Range</ExposeHeader>
-    </CORSRule>
-</CORSConfiguration>
-```
+need to add a CORS policy to the S3 bucket.
 
 ## Development
 
 Tests can be executed with:
 
-```
+```bash
 $ bin/rake
 ```
 
