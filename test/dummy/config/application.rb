@@ -2,17 +2,13 @@ require File.expand_path('../boot', __FILE__)
 
 require "rails"
 
-%w(
-  action_controller
-  action_view
-  rails/test_unit
-  sprockets
-).each do |framework|
-  begin
-    require "#{framework}/railtie"
-  rescue LoadError
-  end
-end
+require "active_model/railtie"
+require "action_controller/railtie"
+require "action_view/railtie"
+require "rails/test_unit/railtie"
+
+require "propshaft"
+require "importmap-rails"
 
 Bundler.require(*Rails.groups)
 require "pdfjs_viewer-rails"

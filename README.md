@@ -3,15 +3,17 @@
 [![Build Status](https://travis-ci.org/senny/pdfjs_viewer-rails.svg?branch=master)](https://travis-ci.org/senny/pdfjs_viewer-rails)
 
 ## Description
-My fork of pdfjs_viewer-rails that uses pure CSS instead scss. This makes it easier to integrate into existing projects.
+My fork of pdfjs_viewer-rails that uses pure CSS instead scss and is compatible with Rails 8.1 (Propshaft & Importmaps) without Node.js requirements.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "pdfjs_viewer-rails", github: "tekkla/pdfjs_viewer-rails-pure_css.git"
+gem "pdfjs_viewer-rails", github: "tekkla/pdfjs_viewer-rails-pure_css"
 ```
+
+This gem depends on `propshaft` and `importmap-rails`.
 
 *Note: pdfjs_viewer-rails is still in early development. Please report if you encounter any issues along the way.*
 

@@ -17,8 +17,8 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,public}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "> 4.2.0"
-  s.add_dependency "json", "> 1.8.4"
+  s.add_dependency "rails", ">= 7.0.0"
+  s.add_dependency "propshaft"
 
   s.add_development_dependency "sqlite3"
 end

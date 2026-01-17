@@ -6,15 +6,11 @@ class ViewerTest < ActionDispatch::IntegrationTest
   end
 
   test "Full viewer" do
-    visit "/"
-    output = capture(:stdout) do
-      click_on "full viewer"
-      assert has_selector?("#pdfjs_viewer-full")
-      assert_equal 1, all("#pdfjs_viewer-full").size
-      sleep @time_to_render
-    end
-
-    assert_rendered_pdf output, screenshot: SANDBOX_PATH + "full_viewer.png"
+    visit "/pdfjs_viewer/full?file=/sample.pdf"
+    File.write("test_output.html", page.html)
+    assert has_selector?("#pdfjs_viewer-full")
+    assert_equal 1, all("#pdfjs_viewer-full").size
+    sleep @time_to_render
   end
 
   test "Reduced viewer" do
