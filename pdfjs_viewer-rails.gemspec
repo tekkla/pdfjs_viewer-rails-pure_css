@@ -7,10 +7,10 @@ require "pdfjs_viewer-rails/version"
 Gem::Specification.new do |s|
   s.name        = "pdfjs_viewer-rails"
   s.version     = PdfjsViewer::Rails::VERSION
-  s.authors     = ["Yves Senn"]
-  s.email       = ["yves.senn@gmail.com"]
-  s.homepage    = "https://github.com/senny/pdfjs_viewer-rails"
-  s.summary     = "PDF.js viewer packaged as a Rails engine."
+  s.authors     = ["Michael Zorn (Original: Yves Senn)"]
+  s.email       = ["m.zorn@tekkla.de"]
+  s.homepage    = "https://github.com/tekkla/pdfjs_viewer-rails-pure_css"
+  s.summary     = "Propshaft ready PDF.js viewer packaged as a Rails engine."
   s.description = "Packages the viewer distributed with PDF.js and makes it available in two styles (full, minimal)."
   s.license     = "MIT"
 
