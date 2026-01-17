@@ -33,8 +33,8 @@ See https://github.com/adobe-type-tools/cmap-resources
     <%= render "pdfjs_viewer/viewer/extra_head", local_assigns %>
   </head>
 
-  <body tabindex="1" class="loadingInProgress" id="pdfjs_viewer-<%= style %>">
-    <div id="outerContainer">
+  <body tabindex="1" class="loadingInProgress" id="pdfjs_viewer-<%= local_assigns[:style] || 'full' %>">
+    <div id="outerContainer" class="<%= local_assigns[:style] || 'full' %>">
 
       <div id="sidebarContainer">
         <div id="toolbarSidebar">

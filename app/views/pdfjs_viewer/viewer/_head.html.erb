@@ -2,7 +2,8 @@
 <title><%= title %></title>
 
 <%= stylesheet_link_tag "pdfjs_viewer/viewer", media: "all" %>
-<%= stylesheet_link_tag "pdfjs_viewer/#{local_assigns[:style] || 'full'}", media: "all" %>
+<% current_style = local_assigns[:style] || 'full' %>
+<%= stylesheet_link_tag "pdfjs_viewer/#{current_style}", media: "all" %>
 
 <!-- This snippet is used in production (included from viewer.html) -->
 <link rel="resource" type="application/l10n" href="/pdfjs_viewer/locale.properties"/>
